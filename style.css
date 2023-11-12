@@ -4,7 +4,15 @@ button {
     margin: 2em;
 }
 
-.selected {
+.sub-menu {
+    display: none;
+}
+
+.selected .sub-menu {
+    display: block;
+}
+
+.selected .cat-btn { /* style category button! */
     color: red;
 }
 

@@ -1,12 +1,10 @@
-console.log("test");
-
 window.onload = function () {
     const up = 38;
     const down = 40;
 
     window.onkeydown = function (key) {
         if (key.keyCode === up) {
-            const categories = document.getElementsByClassName("cat-btn");
+            const categories = document.getElementsByClassName("category");
             let toSelect = false;
             let selected = false;
             for (let i = categories.length - 1; i >= 0; i--) {
@@ -25,7 +23,7 @@ window.onload = function () {
             }
         };
         if (key.keyCode === down) {
-            const categories = document.getElementsByClassName("cat-btn");
+            const categories = document.getElementsByClassName("category");
             let toSelect = false;
             let selected = false;
             for (let cat of categories) {
