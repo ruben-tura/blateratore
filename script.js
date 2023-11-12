@@ -61,6 +61,47 @@ window.onload = function () {
             options[0].classList.add("option-selected");
         };
 
+        // Option scrolling
+        if (key.keyCode === right) {
+            const options = document.querySelectorAll(".selected > .sub-menu > button");
+            let toSelect = false;
+            let selected = false;
+            for (let option of options) {
+                if (toSelect) {
+                    option.classList.add("option-selected");
+                    selected = true;
+                    break;
+                }
+                toSelect = option.classList.contains("option-selected");
+                if (toSelect) {
+                    option.classList.remove("option-selected");
+                }
+            }
+            if (!selected) {
+                options[0].classList.add("option-selected");
+            }
+        }
+
+        if (key.keyCode === left) {
+            const options = document.querySelectorAll(".selected > .sub-menu > button");
+            let toSelect = false;
+            let selected = false;
+            for (let i = options.length - 1; i >= 0; i--) {
+                if (toSelect) {
+                    options[i].classList.add("option-selected");
+                    selected = true;
+                    break;
+                }
+                toSelect = options[i].classList.contains("option-selected");
+                if (toSelect) {
+                    options[i].classList.remove("option-selected");
+                }
+            }
+            if (!selected) {
+                options[options.length - 1].classList.add("option-selected");
+            }
+        }
+
 
     };
 
