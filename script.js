@@ -3,11 +3,19 @@ window.onload = function () {
     const up = 38;
     const right = 39;
     const down = 40;
+    const spacebar = 32;
 
     window.onkeydown = function (key) {
-
+        const elements = document.querySelectorAll("*");
+        let isAnyOptionSelected = false;
+        for (let element of elements) {
+            if (element.classList.contains("option-selected")) {
+                isAnyOptionSelected = true;
+                break;
+            }
+        }
         // Category scrolling
-        if (key.keyCode === up) {
+        if (key.keyCode === up && !isAnyOptionSelected) {
             const categories = document.getElementsByClassName("category");
             let toSelect = false;
             let selected = false;
@@ -28,13 +36,13 @@ window.onload = function () {
                 }
             }
             if (!selected) {
-                categories[categories.length - 1].classList.add("selected");
+                categories[0].classList.add("selected");
             }
             const options = document.querySelectorAll(".selected > .sub-menu > button");
             options[0].classList.add("option-selected");
         };
 
-        if (key.keyCode === down) {
+        if (key.keyCode === down && !isAnyOptionSelected) {
             const categories = document.getElementsByClassName("category");
             let toSelect = false;
             let selected = false;
@@ -55,7 +63,7 @@ window.onload = function () {
                 }
             }
             if (!selected) {
-                categories[0].classList.add("selected");
+                categories[categories.length - 1].classList.add("selected");
             }
             const options = document.querySelectorAll(".selected > .sub-menu > button");
             options[0].classList.add("option-selected");
@@ -78,7 +86,11 @@ window.onload = function () {
                 }
             }
             if (!selected) {
-                options[0].classList.add("option-selected");
+                if (!toSelect) {
+                    options[0].classList.add("option-selected");
+                } else {
+                    options[options.length - 1].classList.add("option-selected");
+                }
             }
         }
 
@@ -98,8 +110,17 @@ window.onload = function () {
                 }
             }
             if (!selected) {
-                options[options.length - 1].classList.add("option-selected");
+                options[0].classList.remove("option-selected");
             }
+        }
+
+        // PLAY AUDIO OH YEAH
+        if (key.keyCode === spacebar) {
+            const optionSelected = document.querySelector(".option-selected");
+            const selectedID = optionSelected.id;
+            const filePath = "audio/" + selectedID + ".mp3";
+            let audio = new Audio(filePath);
+            audio.play();
         }
 
 
