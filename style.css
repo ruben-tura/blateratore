@@ -4,16 +4,20 @@ button {
     margin: 2em;
 }
 
-.sub-menu {
+.sub-menu { /* by default sub-menus are hidden */
     display: none;
 }
 
-.selected .sub-menu {
+.selected .sub-menu { /* only show sub-menus inside of a selected category */
     display: block;
 }
 
 .selected .cat-btn { /* style category button! */
     color: red;
+}
+
+.option-selected {
+    color: green;
 }
 
 #categories {
