@@ -12,8 +12,13 @@ body {
 button { /* BUTTONS SIZING */
     box-sizing: border-box;
     width: 20vw;
+    min-width: none;
     height: 25vh;
-    margin: 4vh;
+    margin: 2vw;
+}
+
+img {
+    width: 50%;
 }
 
 .sub-menu { /* by default sub-menus are hidden */
@@ -47,4 +52,5 @@ button { /* BUTTONS SIZING */
 .category {
     display: flex;
     flex-direction: row;
+    white-space: nowrap;
 }
