@@ -10,6 +10,7 @@ body {
 }
 
 button { /* BUTTONS SIZING */
+    box-sizing: border-box;
     width: 20vw;
     height: 25vh;
     margin: 4vh;
