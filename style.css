@@ -1,7 +1,18 @@
-button {
+body {
+    margin: 0;
+    background: repeating-linear-gradient(
+    to right,
+    black 0%,
+    black 4%,
+    white 4%,
+    white 8%
+  );
+}
+
+button { /* BUTTONS SIZING */
     width: 20vw;
     height: 25vh;
-    margin: 2em;
+    margin: 4vh;
 }
 
 .sub-menu { /* by default sub-menus are hidden */
@@ -12,12 +23,18 @@ button {
     display: block;
 }
 
-.selected .cat-btn { /* style category button! */
+.selected .cat-btn { /* style selected category button! */
     color: red;
+    border: solid;
+    border-width: 0.2em;
+    border-color: red;
 }
 
 .option-selected {
-    color: green;
+    border: solid;
+    border-width: 1em;
+    background-color: yellow;
+    border-color: orange;
 }
 
 #categories {
