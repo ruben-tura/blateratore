@@ -36,6 +36,13 @@ img {
     border-color: red;
 }
 
+.category-highlight .cat-btn {
+    border-style: solid;
+    border-width: thick;
+    background-color: yellow;
+    border-color: orange;
+}
+
 .option-selected {
     border-style: solid;
     border-width: thick;

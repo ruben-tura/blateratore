@@ -17,6 +17,9 @@ window.onload = function () {
         // Category scrolling
         if (key.keyCode === up && !isAnyOptionSelected) {
             const categories = document.getElementsByClassName("category");
+            for (let cat of categories) {
+                cat.classList.remove("category-highlight");
+            }
             let toSelect = false;
             let selected = false;
             for (let i = categories.length - 1; i >= 0; i--) {
@@ -44,6 +47,9 @@ window.onload = function () {
 
         if (key.keyCode === down && !isAnyOptionSelected) {
             const categories = document.getElementsByClassName("category");
+            for (let cat of categories) {
+                cat.classList.remove("category-highlight");
+            }
             let toSelect = false;
             let selected = false;
             for (let cat of categories) {
@@ -71,6 +77,10 @@ window.onload = function () {
 
         // Option scrolling
         if (key.keyCode === right) {
+            const categories = document.getElementsByClassName("category");
+            for (let cat of categories) {
+                cat.classList.remove("category-highlight");
+            }
             const options = document.querySelectorAll(".selected > .sub-menu > button");
             let toSelect = false;
             let selected = false;
@@ -111,6 +121,8 @@ window.onload = function () {
             }
             if (!selected) {
                 options[0].classList.remove("option-selected");
+                const selectedCategories = document.getElementsByClassName("category selected");
+                selectedCategories[0].classList.add("category-highlight");
             }
         }
 
